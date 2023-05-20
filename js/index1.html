@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleta de Dados da Lixeira  </title>
+</head>
+<body>
+    
+    <h1>Coleta de Dados da Lixeira</h1>
+
+  <form id="lixeiraForm">
+    <label for="localizacao">Localização:</label>
+    <select id="localizacao"></select>
+    <br>
+
+    <label for="estadoLixeira">Estado da Lixeira:</label>
+    <select id="estadoLixeira">
+      <option value="vazia">Vazia</option>
+      <option value="quaseCheia">Quase Cheia</option>
+      <option value="cheia">Cheia</option>
+    </select>
+    <br>
+    <button type="submit">Armazenar</button>
+  </form>
+
+  <h2>Estado Atual das Lixeiras:</h2>
+  <ul id="estadoAtualLixeiras"></ul>
+
+  <script>
+    const localizacoes = ['Rua A', 'Rua B', 'Rua C', 'Rua D', 'Rua E']; // Array com nomes de ruas
+
+    // Popula o seletor de localizações com nomes de ruas
+    const localizacaoSelect = document.getElementById('localizacao');
+    for (let i = 0; i < localizacoes.length; i++) {
+      const option = document.createElement('option');
+      option.value = localizacoes[i];
+      option.textContent = localizacoes[i];
+      localizacaoSelect.appendChild(option);
+    }
+
+    document.getElementById('lixeiraForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Impede o envio do formulário
+
+      const localizacaoSelecionada = document.getElementById('localizacao').value;
+      const estadoLixeira = document.getElementById('estadoLixeira').value;
+
+      const lixeiraData = {
+        localizacao: localizacaoSelecionada,
+        estado: estadoLixeira
+      };
+
+      // Armazena os dados da lixeira em uma lista
+      const estadoAtualLixeiras = document.getElementById('estadoAtualLixeiras');
+      const lixeiraItem = document.createElement('li');
+      lixeiraItem.textContent = `${lixeiraData.localizacao}: ${lixeiraData.estado}`;
+      estadoAtualLixeiras.appendChild(lixeiraItem);
+
+      // Limpa o formulário
+      document.getElementById('localizacao').value = '';
+      document.getElementById('estadoLixeira').value = 'vazia';
+    });
+  </script>
+    
+</body>
+</html>
