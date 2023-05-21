@@ -13,9 +13,7 @@ fazer login no app:
 -verificarnqual a lixeira livre mais próxima
 -verificar as localizações das lixeiras pela cidade
 
-para verificar quando foi a última coleta 
-
-motorista(pião)
+motorista
 -Recebr a rota pelo gps
 
 técnico da empresa de reciclagem(controlador)
@@ -31,9 +29,3 @@ técnico da empresa de reciclagem(controlador)
 caminho dos dados 
 lixeira -> controlador -> caminhão
 
-receber dados da lixeira
-quais dados?
-quantidade de lixo e seu localizacao 
-
-controlador 
-desenvolve as rotas através de alertas que teram cido recebidos
