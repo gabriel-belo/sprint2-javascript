@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coleta de Dados da Lixeira  </title>
-    <script src="js/script.js"></script>
-</head>
-<body>
-  <h1>Coleta de Dados da Lixeira</h1>
-
-  <form id="lixeiraForm">
-    <label for="localizacao">Localização:</label>
-    <select id="localizacao">
-      <option value="Rua A">Rua A</option>
-      <option value="Rua B">Rua B</option>
-      <option value="Rua C">Rua C</option>
-      <option value="Rua D">Rua D</option>
-      <option value="Rua E">Rua E</option>
-    </select>
-    <br>
-
-    <label for="estadoLixeira">Estado da Lixeira:</label>
-    <select id="estadoLixeira">
-      <option value="vazia">Vazia</option>
-      <option value="quaseCheia">Quase Cheia</option>
-      <option value="cheia">Cheia</option>
-    </select>
-    <br>
-    <button type="submit">Armazenar</button>
-  </form>
-
-  <h2>Estado Atual das Lixeiras:</h2>
-  <ul id="estadoAtualLixeiras"></ul>
-
-</body>
+    <title>Estado das Lixeiras</title>
+      <script src="js/script.js"></script>
+        <style>
+          .rua-necessaria {
+            font-weight: bold;
+          }
+        </style>
+    <body>
+        <h1>Estado das Lixeiras</h1>
+        <form id="formularioLixeiras">
+          <label for="ruaA">Rua A:</label>
+          <button type="button" onclick="verificarEstado('A', 'vazia')">Vazia</button>
+          <button type="button" onclick="verificarEstado('A', 'quaseCheia')">Quase Cheia</button>
+          <button type="button" onclick="verificarEstado('A', 'cheia')">Cheia</button>
+          <br>
+          <label for="ruaB">Rua B:</label>
+          <button type="button" onclick="verificarEstado('B', 'vazia')">Vazia</button>
+          <button type="button" onclick="verificarEstado('B', 'quaseCheia')">Quase Cheia</button>
+          <button type="button" onclick="verificarEstado('B', 'cheia')">Cheia</button>
+          <br>
+          <label for="ruaC">Rua C:</label>
+          <button type="button" onclick="verificarEstado('C', 'vazia')">Vazia</button>
+          <button type="button" onclick="verificarEstado('C', 'quaseCheia')">Quase Cheia</button>
+          <button type="button" onclick="verificarEstado('C', 'cheia')">Cheia</button>
+          <br>
+          <label for="ruaD">Rua D:</label>
+          <button type="button" onclick="verificarEstado('D', 'vazia')">Vazia</button>
+          <button type="button" onclick="verificarEstado('D', 'quaseCheia')">Quase Cheia</button>
+          <button type="button" onclick="verificarEstado('D', 'cheia')">Cheia</button>
+          <br>
+          <label for="ruaF">Rua F:</label>
+          <button type="button" onclick="verificarEstado('F', 'vazia')">Vazia</button>
+          <button type="button" onclick="verificarEstado('F', 'quaseCheia')">Quase Cheia</button>
+          <button type="button" onclick="verificarEstado('F', 'cheia')">Cheia</button>
+          <br><br>
+          <button type="button" onclick="exibirRuasNecessarias()">Ver Ruas Necessárias</button>
+        </form>
+        <h2>Ruas com lixeiras cheias ou quase cheias:</h2>
+        <p id="ruasNecessarias"></p>
+    </body>
 </html>
